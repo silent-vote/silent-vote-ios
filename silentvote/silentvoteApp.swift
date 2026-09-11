@@ -25,7 +25,7 @@ struct silentvoteApp: App {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .statusBarHidden(splashVisible)
             .task {
-                try? await Task.sleep(for: .seconds(20))
+                try? await Task.sleep(for: .seconds(3))
 
                 withAnimation(.easeInOut(duration: 0.4)) {
                     splashVisible = false
