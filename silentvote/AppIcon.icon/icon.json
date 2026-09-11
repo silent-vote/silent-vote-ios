@@ -14,9 +14,8 @@
         {
           "fill" : "none",
           "glass" : false,
-          "hidden" : false,
-          "image-name" : "2 – Layer 3.svg",
-          "name" : "2 – Layer 3"
+          "image-name" : "2 – Layer.svg",
+          "name" : "2 – Layer"
         },
         {
           "blend-mode" : "normal",
