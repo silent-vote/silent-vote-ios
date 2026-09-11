@@ -13,20 +13,24 @@ struct silentvoteApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .overlay {
-                    if splashVisible {
-                        SplashView()
-                            .transition(.opacity)
-                    }
+            ZStack {
+                ContentView()
+
+                if splashVisible {
+                    SplashView()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .transition(.opacity)
                 }
-                .statusBarHidden(splashVisible)
-                .task {
-                    try? await Task.sleep(for: .seconds(1.5))
-                    withAnimation(.easeInOut(duration: 0.4)) {
-                        splashVisible = false
-                    }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .statusBarHidden(splashVisible)
+            .task {
+                try? await Task.sleep(for: .seconds(20))
+
+                withAnimation(.easeInOut(duration: 0.4)) {
+                    splashVisible = false
                 }
+            }
         }
     }
 }

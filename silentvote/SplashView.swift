@@ -28,8 +28,9 @@ struct SplashView: View {
 
             Text("splash.tagline")
                 .font(.headline)
-                .foregroundStyle(Color.primary.opacity(0.78))
+                .foregroundStyle(Color.secondary)
                 .lineLimit(1)
+                .allowsTightening(true)
                 .minimumScaleFactor(0.7)
                 .opacity(elementsVisible ? 1 : 0)
                 .animation(
@@ -39,9 +40,9 @@ struct SplashView: View {
                     value: elementsVisible
                 )
         }
-        .padding(.horizontal, 32)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(.systemBackground))
+        .ignoresSafeArea()
         .onAppear {
             elementsVisible = true
         }
