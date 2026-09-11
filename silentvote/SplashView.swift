@@ -28,9 +28,12 @@ struct SplashView: View {
 
             Text("splash.tagline")
                 .font(.headline)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Color.primary.opacity(0.78))
                 .multilineTextAlignment(.center)
-                .frame(maxWidth: 320)
+                .lineLimit(2)
+                .minimumScaleFactor(0.8)
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(maxWidth: 340)
                 .opacity(elementsVisible ? 1 : 0)
                 .animation(
                     reduceMotion
