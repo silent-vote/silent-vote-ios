@@ -1,6 +1,83 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Got it. Purchase insights are coming soon." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Got it. Purchase insights are coming soon."
+          }
+        }
+      }
+    },
+    "Opens Silent Vote with a screenshot of the screen, captured by the Shortcuts app with the Get Screen action." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opens Silent Vote with a screenshot of the screen, captured by the Shortcuts app with the Get Screen action."
+          }
+        }
+      }
+    },
+    "Silent Vote Quick Capture" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Silent Vote Quick Capture"
+          }
+        }
+      }
+    },
+    "capture.accessibility.screenshot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Captured screenshot"
+          }
+        }
+      }
+    },
+    "capture.done" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        }
+      }
+    },
+    "capture.missing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No screenshot received — check the Shortcut includes Get Screen."
+          }
+        }
+      }
+    },
+    "capture.received" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Got it. Purchase insights are coming soon."
+          }
+        }
+      }
+    },
     "Hello, world!" : {
 
     },

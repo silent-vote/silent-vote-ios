@@ -9,12 +9,20 @@ import SwiftUI
 
 @main
 struct silentvoteApp: App {
-    @State private var splashVisible = true
+    @State private var appState = AppState.shared
+    @State private var splashVisible = AppState.shared.capture == nil
 
     var body: some Scene {
         WindowGroup {
             ZStack {
                 ContentView()
+
+                if let capture = appState.capture {
+                    CaptureView(capture: capture) {
+                        appState.dismissCapture()
+                    }
+                    .transition(.opacity)
+                }
 
                 if splashVisible {
                     SplashView()
@@ -24,6 +32,10 @@ struct silentvoteApp: App {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .statusBarHidden(splashVisible)
+            .onChange(of: appState.capture) { _, newCapture in
+                guard newCapture != nil else { return }
+                splashVisible = false
+            }
             .task {
                 try? await Task.sleep(for: .seconds(3))
 
