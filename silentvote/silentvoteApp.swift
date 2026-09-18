@@ -11,6 +11,7 @@ import SwiftUI
 struct silentvoteApp: App {
     @State private var appState = AppState.shared
     @State private var splashVisible = AppState.shared.capture == nil
+    @Environment(\.scenePhase) private var scenePhase
 
     var body: some Scene {
         WindowGroup {
@@ -36,7 +37,16 @@ struct silentvoteApp: App {
                 guard newCapture != nil else { return }
                 splashVisible = false
             }
+            .onChange(of: scenePhase) { _, phase in
+                guard phase == .active else { return }
+                appState.consumeInboxIfNeeded()
+            }
+            .onOpenURL { _ in
+                appState.consumeInboxIfNeeded()
+            }
             .task {
+                appState.consumeInboxIfNeeded()
+
                 try? await Task.sleep(for: .seconds(3))
 
                 withAnimation(.easeInOut(duration: 0.4)) {

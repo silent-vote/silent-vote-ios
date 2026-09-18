@@ -15,11 +15,23 @@ struct QuickCapture: Equatable {
 @MainActor
 @Observable
 final class AppState {
-    static let shared = AppState()
+    static let shared = AppState(inbox: .shared)
 
     var capture: QuickCapture?
 
-    private init() {}
+    private let inbox: CaptureInbox?
+
+    private init(inbox: CaptureInbox?) {
+        self.inbox = inbox
+    }
+
+    /// Displays the newest unconsumed shared capture, if any (a handoff whose
+    /// host-app open failed survives here until the next launch), then empties
+    /// the inbox — any older items are discarded.
+    func consumeInboxIfNeeded() {
+        guard let item = inbox?.consumeNewest() else { return }
+        receive(imageData: item.data, suggestedFilename: item.suggestedFilename)
+    }
 
     func receive(imageData: Data?, suggestedFilename: String?) {
         removeStoredImage()

@@ -6,13 +6,52 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6A6052113691840AF029D7CE /* CaptureInbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FD2F6FE27183D62203468 /* CaptureInbox.swift */; };
+		79A27FFCBD6BE6045059C316 /* ShareCapture.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 588D2DEEF4CAE2B4FF0C9DE4 /* ShareCapture.appex */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD82D237705FFD24DF90A233 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6F8179D21C32A621D9AB441 /* Foundation.framework */; };
+		EBC3E5584DC20F4970523F85 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FBC8CA37A7B3C68E20470A /* ShareViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A94980A481133854AB7CD737 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09E5996F3053EF80000EA089 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87FA7780F58D279404E66CA1;
+			remoteInfo = ShareCapture;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9412C892C1D767807D9628C3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				79A27FFCBD6BE6045059C316 /* ShareCapture.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		09E599773053EF80000EA089 /* silentvote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = silentvote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		26FBC8CA37A7B3C68E20470A /* ShareViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		588D2DEEF4CAE2B4FF0C9DE4 /* ShareCapture.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareCapture.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6F8179D21C32A621D9AB441 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		A83C53DE46BDF758A40C9090 /* ShareCapture.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = ShareCapture.entitlements; sourceTree = "<group>"; };
+		B8EE5BE4105840B1A0E4BA2F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD8FD2F6FE27183D62203468 /* CaptureInbox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CaptureInbox.swift; path = ../silentvote/CaptureInbox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		09E599793053EF80000EA089 /* silentvote */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = silentvote;
 			sourceTree = "<group>";
 		};
@@ -26,6 +65,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AD6D8929F61F7B25FCF29D1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD82D237705FFD24DF90A233 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -34,6 +81,8 @@
 			children = (
 				09E599793053EF80000EA089 /* silentvote */,
 				09E599783053EF80000EA089 /* Products */,
+				EC8248E67ACCC7A9EDB033CC /* Frameworks */,
+				5D6B2AE77668024E0A5C0A27 /* ShareCapture */,
 			);
 			sourceTree = "<group>";
 		};
@@ -41,8 +90,37 @@
 			isa = PBXGroup;
 			children = (
 				09E599773053EF80000EA089 /* silentvote.app */,
+				588D2DEEF4CAE2B4FF0C9DE4 /* ShareCapture.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		19962249A05C5FFACF9FAB5C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A6F8179D21C32A621D9AB441 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5D6B2AE77668024E0A5C0A27 /* ShareCapture */ = {
+			isa = PBXGroup;
+			children = (
+				26FBC8CA37A7B3C68E20470A /* ShareViewController.swift */,
+				CD8FD2F6FE27183D62203468 /* CaptureInbox.swift */,
+				B8EE5BE4105840B1A0E4BA2F /* Info.plist */,
+				A83C53DE46BDF758A40C9090 /* ShareCapture.entitlements */,
+			);
+			name = ShareCapture;
+			path = ShareCapture;
+			sourceTree = "<group>";
+		};
+		EC8248E67ACCC7A9EDB033CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19962249A05C5FFACF9FAB5C /* iOS */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,20 +133,37 @@
 				09E599733053EF80000EA089 /* Sources */,
 				09E599743053EF80000EA089 /* Frameworks */,
 				09E599753053EF80000EA089 /* Resources */,
+				9412C892C1D767807D9628C3 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				958E4CF7BFF6E84427701FA5 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				09E599793053EF80000EA089 /* silentvote */,
 			);
 			name = silentvote;
-			packageProductDependencies = (
-			);
 			productName = silentvote;
 			productReference = 09E599773053EF80000EA089 /* silentvote.app */;
 			productType = "com.apple.product-type.application";
+		};
+		87FA7780F58D279404E66CA1 /* ShareCapture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E5657F92FDA185CE65AE69D /* Build configuration list for PBXNativeTarget "ShareCapture" */;
+			buildPhases = (
+				5CC50A0509BB858D1711E5C2 /* Sources */,
+				AD6D8929F61F7B25FCF29D1A /* Frameworks */,
+				BF0B0A9373F0FA91B0CC6EBA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareCapture;
+			productName = ShareCapture;
+			productReference = 588D2DEEF4CAE2B4FF0C9DE4 /* ShareCapture.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -100,12 +195,20 @@
 			projectRoot = "";
 			targets = (
 				09E599763053EF80000EA089 /* silentvote */,
+				87FA7780F58D279404E66CA1 /* ShareCapture */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		09E599753053EF80000EA089 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF0B0A9373F0FA91B0CC6EBA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +225,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5CC50A0509BB858D1711E5C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBC3E5584DC20F4970523F85 /* ShareViewController.swift in Sources */,
+				6A6052113691840AF029D7CE /* CaptureInbox.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		958E4CF7BFF6E84427701FA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ShareCapture;
+			target = 87FA7780F58D279404E66CA1 /* ShareCapture */;
+			targetProxy = A94980A481133854AB7CD737 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		09E599803053EF81000EA089 /* Debug */ = {
@@ -252,11 +373,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = silentvote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3G9X27YS48;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AppInfo.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SilentVote;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -286,11 +409,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = silentvote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3G9X27YS48;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AppInfo.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SilentVote;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -314,6 +439,47 @@
 			};
 			name = Release;
 		};
+		3866EDA309181FF11F8A0DDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = ShareCapture/ShareCapture.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3G9X27YS48;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ShareCapture/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = autos.vibration.silentvote.share;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E0C6CA262FF84232EB4BE480 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = ShareCapture/ShareCapture.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3G9X27YS48;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ShareCapture/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = autos.vibration.silentvote.share;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -331,6 +497,15 @@
 			buildConfigurations = (
 				09E599833053EF81000EA089 /* Debug */,
 				09E599843053EF81000EA089 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E5657F92FDA185CE65AE69D /* Build configuration list for PBXNativeTarget "ShareCapture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3866EDA309181FF11F8A0DDB /* Release */,
+				E0C6CA262FF84232EB4BE480 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
