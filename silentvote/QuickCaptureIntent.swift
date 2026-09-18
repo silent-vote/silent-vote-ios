@@ -19,7 +19,11 @@ struct QuickCaptureIntent: AppIntent {
         .foreground(.immediate)
     }
 
-    @Parameter(title: "Screenshot")
+    @Parameter(
+        title: "Screenshot",
+        supportedContentTypes: [.image],
+        inputConnectionBehavior: .connectToPreviousIntentResult
+    )
     var screenshot: IntentFile?
 
     func perform() async throws -> some IntentResult {

@@ -2,7 +2,7 @@
 
 One-press flow: **hold the Action Button → the screen is captured → SilentVote opens with that screenshot.**
 
-The capture is done by the Shortcuts app ("Get Screen" is the only way to snapshot another app's screen); SilentVote receives it through its **Silent Vote Quick Capture** app intent. The setup is done once, by hand.
+The capture is done by the Shortcuts app (a third-party app cannot snapshot another app's screen); SilentVote receives it through its **Silent Vote Quick Capture** app intent. The setup is done once, by hand.
 
 ## Requirements
 
@@ -12,11 +12,23 @@ The capture is done by the Shortcuts app ("Get Screen" is the only way to snapsh
 
 ## 1. Build the Shortcut
 
-1. Open the **Shortcuts** app → **＋** (new shortcut). Name it `Silent Vote Quick Capture`.
-2. Tap **Add Action**, search for **Get Screen** (under Controls/Screen) and add it. It outputs the current screen as a photo.
-3. Tap **Add Action** again, search under the **SilentVote** app for **Silent Vote Quick Capture** and add it.
-4. In that action's **Screenshot** input, tap the variable placeholder and choose **Screenshot** (the output of "Get Screen").
-5. (Optional but recommended) Long-press the shortcut card in the library → shortcut details → turn **Show When Run** off, so the running-Shortcut HUD does not cover the captured screen.
+Open the **Shortcuts** app → **＋** (new shortcut). Name it `Silent Vote Quick Capture`. Then add the capture action — pick the variant for your device:
+
+### Variant A — Apple Intelligence available (any region where "Get Screen" exists)
+
+1. **Add Action** → search **Get Screen** (under Controls/Screen). It silently captures the current screen and outputs it as a variable.
+2. **Add Action** → under the **SilentVote** app, add **Silent Vote Quick Capture**. Its *Screenshot* input should already be auto-connected to the capture; if not, tap the *Screenshot* placeholder and pick the variable from the previous action.
+
+### Variant B — China region / Apple Intelligence off ("Get Screen" is hidden)
+
+Use **Take Screenshot** instead:
+
+1. **Add Action** → search **Take Screenshot**. Turn **off** "Show Markup Interface" and "Show Preview" (where offered) so it captures silently. Note: this route always keeps a copy in your Camera Roll (Screenshots album) — unavoidable without Get Screen.
+2. **Add Action** → **Silent Vote Quick Capture** (under SilentVote). The intent declares its *Screenshot* parameter as `IntentFile` with image content types and `connectToPreviousIntentResult`, so adding it directly after the capture action **auto-wires** the screenshot — the action token should show the connected variable without you picking anything.
+
+If it shows a Files browser instead of connecting (old app build before the parameter fix): reinstall the app, then remove and re-add the Silent Vote Quick Capture action.
+
+Finally, for both variants: long-press the shortcut card in the library → shortcut details → turn **Show When Run** off, so the running-Shortcut HUD does not cover the captured screen.
 
 ## 2. Assign it to the Action Button
 
